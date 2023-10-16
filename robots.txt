@@ -1,12 +1,11 @@
-# www.robotstxt.org
+User-agent: Googlebot
+Disallow: 
 
-{{- $isProduction := eq hugo.Environment "production" -}}
-{{- $isNetlify := eq (getenv "NETLIFY") "true" -}}
-{{- $allowCrawling := and (not $isNetlify) $isProduction -}}
+User-agent: bingbot
+Disallow: 
 
-{{ if $allowCrawling }}
-# Allow crawling of all content
-{{- end }}
-User-agent: *
-Disallow:{{ if not $allowCrawling }} /{{ end }}
-Sitemap: {{ "/sitemap.xml" | absURL }}
+User-agent: Slurp
+Disallow: 
+
+User-agent: DuckDuckBot
+Disallow:
